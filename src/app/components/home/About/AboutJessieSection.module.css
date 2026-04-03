@@ -1,0 +1,97 @@
+.section {
+    padding: clamp(1.5rem, 3vw, 2.5rem) 0;
+    background: var(--color-bg);
+    scroll-margin-top: 200px;
+
+}
+
+.inner {
+    width: min(100% - 48px, 1360px);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(320px, 520px) minmax(500px, 1fr);
+    gap: var(--gap-small);
+    align-items: stretch;
+}
+
+.mosaicWrap {
+    position: relative;
+    min-height: 430px;
+}
+
+.mosaicImage {
+    object-fit: contain;
+    object-position: top center;
+}
+
+.contentPanel {
+    background: var(--color-panel);
+    color: var(--color-text-inverse);
+    padding: clamp(1.5rem, 2.2vw, 2.25rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.heading {
+    margin: 0 0 0.75rem;
+    font-family: var(--font-family-display);
+    font-size: clamp(2rem, 3vw, 3.25rem);
+    line-height: 0.95;
+    color: var(--color-accent);
+    text-transform: uppercase;
+}
+
+.copy {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.copy p {
+    margin: 0;
+    font-family: var(--font-family-body);
+    font-size: clamp(1rem, 1.05vw, 1.25rem);
+    line-height: 1.45;
+    max-width: none;
+}
+
+.copy strong {
+    font-weight: 700;
+}
+
+@media (max-width: 1100px) {
+    .inner {
+        grid-template-columns: 1fr;
+    }
+
+    .mosaicWrap {
+        min-height: 420px;
+    }
+
+    .copy p {
+        max-width: none;
+    }
+
+    .section {
+        scroll-margin-top: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        scroll-margin-top: 100px;
+    }
+
+    .inner {
+        width: min(100% - 24px, 1360px);
+    }
+
+    .mosaicWrap {
+        min-height: 280px;
+    }
+
+    .heading {
+        font-size: clamp(1.8rem, 8vw, 2.8rem);
+    }
+}

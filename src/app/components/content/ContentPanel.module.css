@@ -1,0 +1,28 @@
+.contentPanel {
+  background: var(--color-panel);
+  color: var(--color-text-inverse);
+  padding: clamp(1.5rem, 2.2vw, 2.25rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  justify-self: center;
+  max-width: 100%;
+}
+.title {
+  margin-bottom: 0.75rem;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.copy p {
+  margin: 0;
+  max-width: none;
+}
+
+.copy strong {
+  font-weight: 700;
+}

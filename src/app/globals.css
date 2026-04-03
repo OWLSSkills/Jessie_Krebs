@@ -1,0 +1,118 @@
+
+:root {
+  --font-family-body: "InterVariable", "Inter", Arial, Helvetica, sans-serif;
+  --font-family-display: "alfarn", "InterVariable", "Inter";
+
+  --color-bg: #f6f3eb;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f0ece2;
+
+  --color-text: #1f1f1a;
+  --color-text-muted: #4f564d;
+  --color-text-inverse: #f8f7f2;
+
+  --color-brand: #2f6f52;
+  --color-brand-hover: #285e45;
+  --color-brand-strong: #1f503c;
+
+  --color-panel: #16333b;
+  --color-accent: #c7ce8a;
+  --color-border: #d9d3c6;
+  --gap-small: clamp(1.5rem, 3vw, 3rem);
+}
+.gap_small {
+    width: clamp(1.5rem, 3vw, 3rem);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: clip;
+  scroll-behavior: smooth;
+
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+nav a,
+.buttonLabel {
+  font-family: var(--font-family-display);
+}
+
+
+.alfarn{
+  font-family: 'Alfarn', system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0;                      /* let the wrapper control spacing */
+}
+
+
+
+.paragraph_medium_white {
+  margin: 0 0 1.75rem;
+  color: var(--color-text-inverse);
+  font-family: var(--font-family-body);
+  font-size: clamp(1.25rem, 1.8vw, 1.9rem);
+  line-height: 1.45;
+}
+
+.paragraph_medium_black {
+  margin: 0 0 1.75rem;
+  color: var(--color-text);
+  font-family: var(--font-family-body);
+  font-size: clamp(1.25rem, 1.8vw, 1.9rem);
+  line-height: 1.45;
+}
+
+
+.paragraph_small_black {
+  margin: 0 0 26px;
+  font-family: var(--font-family-body);
+  color: var(--color-text);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+.paragraph_small_white {
+  margin: 0 0 26px;
+  font-family: var(--font-family-body);
+  color: var(--color-text-inverse);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+
+.heading_accent {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-family-display);
+  font-size: clamp(2rem, 3vw, 3.25rem);
+  line-height: 0.95;
+  color: var(--color-accent);
+  text-transform: uppercase;
+}
+.heading_black {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-family-display);
+  font-size: clamp(2rem, 3vw, 3.25rem);
+  line-height: 0.95;
+  color: var(--color-text);
+  text-transform: uppercase;
+}
+
+.errorTextGlobal {
+  margin-top: 1rem;
+  color: #9f1d1d;
+  font-size: 1rem;
+  text-align: center;
+}

@@ -1,0 +1,281 @@
+.form {
+  width: min(100% - 48px, 1360px);
+  margin: 0 auto;
+  padding: clamp(1rem, 2vw, 2rem) 0 clamp(3rem, 5vw, 5rem);
+}
+
+.sectionBlock {
+  margin-bottom: 2rem;
+}
+
+.sectionTitle {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-family-display);
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  line-height: 1;
+  color: var(--color-text);
+  text-transform: uppercase;
+}
+
+.helperText {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  line-height: 1.45;
+  color: var(--color-text);
+}
+
+.fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.gridTwo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 1.25rem;
+}
+
+.fieldBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.label {
+  font-size: 1rem;
+  line-height: 1.35;
+  color: var(--color-text);
+}
+
+.required {
+  color: #9f1d1d;
+  font-weight: 700;
+  font-size: larger;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  border: 0;
+  border-radius: 0;
+  background: var(--color-panel);
+  color: var(--color-text-inverse);
+  padding: 0.9rem 1rem;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+.input {
+  min-height: 2.85rem;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 12rem;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.choiceRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.radioGroup,
+.checkboxGrid {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.checkboxGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.choiceRow input[type="radio"],
+.choiceRow input[type="checkbox"] {
+  margin-top: 0.15rem;
+  accent-color: var(--color-panel);
+  inline-size: 1rem;
+  block-size: 1rem;
+  flex: 0 0 auto;
+}
+
+.dateRangeList {
+  display: grid;
+  gap: 1rem;
+}
+
+.dateRangeCard {
+  border: 1px solid var(--color-border);
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.dateRangeHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.rangeFeedback {
+  margin: 0.75rem 0 0;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+.inlineActions {
+  margin-top: 1rem;
+}
+
+.secondaryButton,
+.removeButton {
+  appearance: none;
+  border: 1px solid var(--color-panel);
+  background: transparent;
+  color: var(--color-panel);
+  padding: 0.6rem 0.9rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+.secondaryButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.errorText {
+  margin: 0.35rem 0 0;
+  color: #9f1d1d;
+  font-size: 0.95rem;
+}
+
+.successText {
+  margin-top: 1rem;
+  color: var(--color-brand-strong);
+  font-size: 1rem;
+}
+
+.submitRow {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 768px) {
+  .form {
+    width: min(100% - 24px, 1360px);
+  }
+
+  .gridTwo,
+  .checkboxGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dateInput {
+  background: #ffffff;
+  color: var(--color-panel);
+  color-scheme: light;
+  cursor: pointer;
+}
+
+.dateInput::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 1;
+  filter: invert(13%) sepia(16%) saturate(1165%) hue-rotate(150deg) brightness(93%) contrast(91%);
+}
+
+.dateInput::-webkit-datetime-edit {
+  color: var(--color-panel);
+}
+
+.dateInput::-webkit-datetime-edit-text,
+.dateInput::-webkit-datetime-edit-month-field,
+.dateInput::-webkit-datetime-edit-day-field,
+.dateInput::-webkit-datetime-edit-year-field {
+  color: var(--color-panel);
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(22, 51, 59, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 1000;
+}
+
+.modalCard {
+  width: min(100%, 820px);
+  max-height: min(85vh, 900px);
+  overflow: auto;
+  background: var(--color-bg);
+  color: var(--color-text);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  box-sizing: border-box;
+  border: 1px solid var(--color-border);
+}
+
+.modalTitle {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-family-display);
+  font-size: clamp(1.8rem, 3vw, 2.75rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+.modalIntro {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-family-body);
+  font-size: 1rem;
+  line-height: 1.45;
+  color: var(--color-text);
+}
+
+.messagePreview {
+  background: var(--color-panel);
+  color: var(--color-text-inverse);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  overflow: auto;
+}
+
+.messagePreviewText {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: var(--font-family-body);
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: center;
+}

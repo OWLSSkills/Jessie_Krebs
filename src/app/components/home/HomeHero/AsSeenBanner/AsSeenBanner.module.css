@@ -1,0 +1,67 @@
+.as_seen_animation_banner {
+  background-color: var(--color-brand, #276c4c);
+  width: 100%;
+  position: relative;
+  /* padding: 2%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.75rem;
+}
+
+.banner_title {
+  margin: 0;
+  text-align: center;
+  color: var(--color-accent, #cfd58b);
+  font-family: var(--font-family-display);
+  font-size: clamp(1.25rem, 2vw, 2rem);
+  line-height: 1.1;
+}
+
+.animation_banner_wrapper {
+  overflow: hidden;
+  width: 100%;
+  padding: 1rem 2vw;
+}
+
+.animation_banner_track {
+  display: flex;
+  gap: clamp(6rem, 16vw, 16rem);
+  animation: scroll-left 10s linear infinite;
+  width: max-content;
+  align-items: center;
+}
+
+.animation_banner_track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-54%);
+  }
+}
+
+.logo_container {
+  width: clamp(100px, 10vw, 160px);
+  height: clamp(30px, 4.5vw, 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.animation_banner_image {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform 0.2s ease-in-out;
+}
+
+.scale_up_logo {
+  transform: scale(1.6);
+}

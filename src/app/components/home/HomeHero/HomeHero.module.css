@@ -1,0 +1,297 @@
+.hero {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+.shell {
+  flex: 1;
+  width: min(100% - 48px, 1360px);
+  margin: 0 auto;
+  padding-top: 38px;
+  display: flex;
+  flex-direction: column;
+}
+
+.heroGrid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr minmax(320px, 430px) 1fr;
+  align-items: end;
+  gap: 24px;
+  min-height: 0;
+  padding-top: 28px;
+}
+
+
+
+.brandBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1;
+}
+
+.brandTitle {
+  margin: 0;
+  font-family: var(--font-family-display);
+  font-size: clamp(2rem, 2vw, 2.75rem);
+  line-height: 0.9;
+  letter-spacing: 0.01em;
+}
+
+.brandSubTitle {
+  margin: 6px 0 0;
+  font-family: var(--font-family-display);
+  font-size: 1rem;
+}
+
+
+
+
+.leftColumn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 100%;
+  margin-right: 10%;
+  /* padding-bottom: 40px; */
+  padding-left: var(--gap-small)
+}
+
+.leftCopyInner {
+  max-width: 420px;
+}
+
+.leftHeadline {
+  margin: 0 0 20px;
+  font-family: var(--font-family-display);
+  font-size: clamp(2rem, 2.1vw, 3rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.headlineTopRow {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  flex-wrap: nowrap;
+}
+
+.headlineText {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.headlineBottomRow {
+  display: block;
+}
+
+.masterclassLogo {
+  height: clamp(1.1rem, 1.6vw, 1.8rem);
+  width: auto;
+  object-fit: contain;
+  transform: translateY(-0.02em);
+  flex-shrink: 0;
+}
+
+.leftSupporting {
+  margin: 0 0 28px;
+  font-family: var(--font-family-body);
+  font-size: clamp(1.25rem, 1.4vw, 2rem);
+  line-height: 1.2;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding: 0 20px;
+  background: #111111;
+  color: var(--color-accent);
+  text-decoration: none;
+  font-family: var(--font-family-display);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.ctaButton:hover {
+  transform: translateY(-1px);
+}
+
+.imageColumn {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  min-height: 100%;
+}
+
+.imageWrap {
+  position: relative;
+  width: min(100%, 430px);
+  aspect-ratio: 0.82 / 1.25;
+}
+
+.heroImage {
+  object-fit: contain;
+  object-position: bottom center;
+}
+
+.rightColumn {
+  display: flex;
+  align-items: center;
+  min-height: 90%;
+  padding-bottom: 50px;
+}
+
+.rightCopyCard {
+  max-width: 430px;
+}
+
+.rightHeadline {
+  margin: 0 0 12px;
+  font-family: var(--font-family-display);
+  font-size: clamp(2rem, 2vw, 2.9rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.rightCopyCard p {
+  margin: 0 0 26px;
+  font-family: var(--font-family-body);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1200px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    gap: 12px;
+    padding-top: 24px;
+  }
+  .hero{
+    margin-top: 100px;
+  }
+
+  .leftColumn,
+  .imageColumn,
+  .rightColumn {
+    justify-content: center;
+    padding-bottom: 0;
+  }
+
+  .leftCopyInner,
+  .rightCopyCard {
+    max-width: 400px;
+    text-align: center;
+  }
+
+  .imageWrap {
+    width: min(100%, 420px);
+  }
+
+  .topBar {
+    grid-template-columns: 1fr;
+  }
+
+  .brandBlock {
+    align-items: center;
+  }
+}
+@media (max-width: 768px) {
+  .shell {
+    width: min(100% - 24px, 1360px);
+    padding-top: 18px;
+  }
+
+  .hero {
+    min-height: 100svh;
+    margin-top: 80px;
+  }
+
+  .heroGrid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding-top: 8px;
+    align-content: start;
+  }
+
+  .leftColumn,
+  .imageColumn,
+  .rightColumn {
+    justify-content: center;
+    padding-bottom: 0;
+    min-height: auto;
+    margin-right: 0;
+    padding-left: 0;
+  }
+
+  .leftCopyInner,
+  .rightCopyCard {
+    max-width: 400px;
+    text-align: center;
+  }
+
+  .leftHeadline,
+  .rightHeadline {
+    font-size: clamp(1.6rem, 8vw, 2.4rem);
+  }
+
+  .leftSupporting {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  .headlineTopRow {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .headlineText {
+    white-space: normal;
+  }
+
+  .masterclassLogo {
+    height: clamp(1.5rem, 6vw, 2.1rem);
+    max-width: 220px;
+  }
+
+  .imageWrap {
+    width: min(100%, 320px);
+    max-height: 42svh;
+    aspect-ratio: 0.82 / 1.25;
+  }
+
+  .heroImage {
+    object-fit: contain;
+    object-position: bottom center;
+  }
+
+  .ctaButton {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .logoContainer {
+    min-width: 210px;
+    padding: 0 20px;
+  }
+
+  .animationBannerImage {
+    max-height: 54px;
+  }
+}
