@@ -40,7 +40,7 @@ export function SiteHeader() {
       <div className={styles.inner}>
         <Link href="/" className={styles.brandBlock} onClick={closeMobileMenu}>
           <span className={styles.brandTitle}>CUSTOM COURSES</span>
-          <span className={styles.brandSubTitle}>by Jessie Krebs</span>
+          <span className={`gloria`}>by Jessie Krebs</span>
         </Link>
 
         <nav className={styles.desktopNav} aria-label="Primary">
