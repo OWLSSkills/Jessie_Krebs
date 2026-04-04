@@ -36,7 +36,7 @@ export function SquareButton(props: SquareButtonProps) {
 
   const classes = [
     styles.button,
-    shape === "rounded" ? styles.rounded : styles.square,
+    shape === "rounded" ? styles.square : styles.square, 
     fullWidthOnMobile ? styles.fullWidthOnMobile : "",
     className,
   ]
