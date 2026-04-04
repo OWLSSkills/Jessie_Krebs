@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { SiteHeader } from "./components/navigation/SiteHeader/SiteHeader";
+import Footer from "./components/navigation/Footer/Footer";
 
 export const metadata: Metadata = {
   title: "Jessie Krebs",
@@ -27,6 +28,7 @@ export default function RootLayout({
       <body>
         <SiteHeader />
         {children}
+        <Footer />
       </body>
     </html>
   );

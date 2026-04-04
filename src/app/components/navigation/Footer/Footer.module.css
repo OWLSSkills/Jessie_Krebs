@@ -1,0 +1,192 @@
+.footer {
+  margin-top: 4svh;
+  background: rgb(245,249,246);
+  width: 100%;
+  position: relative;
+  min-height: 100px;
+  display: grid;
+  grid-template-columns: minmax(240px, 1fr) auto minmax(320px, 1fr);
+  align-items: center;
+  padding-inline: clamp(1rem, 3vw, 2.5rem);
+  box-sizing: border-box;
+  column-gap: clamp(1rem, 2vw, 2rem);
+}
+.footerStack {
+  display: inline-block;
+  text-align: center;
+  justify-self: center;
+}
+
+.smallLogo {
+  width: 50%;
+  justify-self: start;
+}
+
+/* Right-docked container, vertically centered */
+.socialsDock {
+  justify-self: center;
+  align-self: center;
+  z-index: 1;
+  margin-top: -1svh;
+}
+
+.socialsDock > div {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: clamp(0.5rem, 1.2vw, 1rem);
+  width: max-content;
+}
+
+
+.socialsDock img,
+.socialsDock svg {
+  width: clamp(2.75rem, 4vw, 4.5rem);
+  height: clamp(2.75rem, 4vw, 4.5rem);
+  display: block;
+}
+.contact {
+  justify-self: center;
+  font-size: clamp(1rem, 2svw, 1.2rem);
+}
+
+/* PHONE FIX: stack then center socials underneath */
+
+.affiliateLogos {
+  display: inline-grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  column-gap: clamp(0.5rem, 1.4vw, 1rem);
+  width: min(100%, 24rem);
+  justify-self: end;
+  margin-right: clamp(0.5rem, 2vw, 1.5rem);
+  min-width: 0;
+  box-sizing: border-box;
+}
+.logoFooter {
+  width: 100%;
+  max-width: 8.5rem;
+  height: auto;
+  justify-self: end;
+  align-self: center;
+}
+
+.logoLockup {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-self: start;
+  min-width: 0;
+  line-height: 1.1;
+}
+
+.alfarn_custom {
+  font-family: 'Alfarn', system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0;
+  white-space: nowrap;
+  font-size: clamp(0.9rem, 1.5vw, 1.55rem);
+}
+
+.gloria_cursive {
+  font-family: "gloria-hallelujah", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 1px;
+  margin: 0.1rem 0 0;
+  font-size: clamp(0.45rem, 0.75vw, 0.8rem);
+  align-self: flex-end;
+  white-space: nowrap;
+}
+
+.text {
+  margin-top: -1svh;
+}
+@media (max-width: 800px) {
+  .footer {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr) minmax(0, 0.95fr);
+    align-items: start;
+    column-gap: 0.75rem;
+    padding-inline: 0.5rem;
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .footer > div,
+  .footerStack,
+  .affiliateLogos {
+    min-width: 0;
+  }
+
+  .socialsDock {
+    position: static;
+    margin: 0 0 0.5rem;
+    justify-self: center;
+    align-self: start;
+    scale: 1;
+  }
+
+  .socialsDock > div {
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .socialsDock img,
+  .socialsDock svg {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .contact {
+    text-align: center;
+    font-size: clamp(0.9rem, 3.8vw, 1.1rem);
+  }
+
+  .smallLogo {
+    width: min(100%, 10rem);
+    justify-self: center;
+    margin-top: 0.25rem;
+  }
+
+  .footerStack {
+    text-align: center;
+  }
+
+  .text {
+    margin-top: 0;
+  }
+
+  .affiliateLogos {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: start;
+    row-gap: 0.35rem;
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .logoFooter {
+    max-width: 6.5rem;
+    width: 100%;
+    justify-self: center;
+  }
+
+  .logoLockup {
+    align-items: center;
+    justify-self: center;
+    line-height: 1;
+  }
+
+  .alfarn_custom {
+    font-size: clamp(0.7rem, 3vw, 1rem);
+    text-align: center;
+  }
+
+  .gloria_cursive {
+    font-size: clamp(0.38rem, 1.8vw, 0.6rem);
+    align-self: center;
+    text-align: center;
+  }
+}

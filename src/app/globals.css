@@ -116,3 +116,10 @@ nav a,
   font-size: 1rem;
   text-align: center;
 }
+
+.intervariable{
+  font-family: 'InterVariable', system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0;                      /* let the wrapper control spacing */
+}
