@@ -96,20 +96,17 @@ nav a,
 
 
 .heading_accent {
-  margin: 0 0 0.75rem;
-  font-family: var(--font-family-display);
-  font-size: clamp(2rem, 3vw, 3.25rem);
-  line-height: 0.95;
   color: var(--color-accent);
-  text-transform: uppercase;
 }
 
 .heading_black {
+  color: var(--color-text);
+}
+.heading_black, .heading_accent {
   margin: 0 0 0.75rem;
   font-family: var(--font-family-display);
-  font-size: clamp(2rem, 3vw, 3.25rem);
+  font-size: clamp(1.5rem, 2.33vw, 2.5rem);
   line-height: 0.95;
-  color: var(--color-text);
   text-transform: uppercase;
 }
 
