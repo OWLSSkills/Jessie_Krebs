@@ -17,13 +17,6 @@ export function KeynoteSpeakerDetailSection() {
                             voice ring loud and clear. We are a force to be reckoned with,
                             ready to drive forward with purpose and compassion.
                         </p>
-
-                        <p className={`paragraph_medium_black ${styles.lead}`}>
-                            Intensity, Credibility, and Enthusiasm.
-                            <br />
-                            This is what “ICE” means to instructors at the Air Force SERE
-                            school and it’s what makes SERE Specialists some of the best in the world.
-                        </p>
                     </div>
 
                     <div className={styles.mosaicWrap}>
@@ -36,6 +29,13 @@ export function KeynoteSpeakerDetailSection() {
                         />
                     </div>
                 </div>
+
+                <p className={`paragraph_small_black ${styles.secondaryLead}`}>
+                    Intensity, Credibility, and Enthusiasm.
+                    <br />
+                    This is what “ICE” means to instructors at the Air Force SERE
+                    school and it’s what makes SERE Specialists some of the best in the world.
+                </p>
 
                 <div className={styles.bodyCopy}>
                     <p className="paragraph_small_black">

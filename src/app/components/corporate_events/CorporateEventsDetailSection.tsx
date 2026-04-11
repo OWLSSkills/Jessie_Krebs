@@ -6,31 +6,27 @@ export function CorporateEventsDetailSection() {
   return (
     <section className={styles.section}>
       <div className={styles.inner}>
-        <div className={styles.topRow}>
-          <div className={styles.intro}>
-            <h1 className={`heading_black ${styles.title}`}>CORPORATE EVENTS</h1>
-
-            <p className={`paragraph_medium_black ${styles.lead}`}>
-              From startup to conglomerate, if your people need to blow off
-              steam, celebrate a major win, bond and connect in meaningful
-              ways, improve office culture and morale, or just enjoy each
-              other&apos;s company in a fun and unique way, you&apos;re in the
-              right place!
-            </p>
-          </div>
-
+        <div className={styles.contentFlow}>
           <div className={styles.mosaicWrap}>
             <Image
               src="/corporate_events/Logo_companies.png"
               alt="Corporate event logo mosaic"
               fill
-              sizes="(max-width: 980px) 100vw, 520px"
+              sizes="(max-width: 980px) 100vw, 560px"
               className={styles.mosaicImage}
             />
           </div>
-        </div>
 
-        <div className={styles.bodyCopy}>
+          <h1 className={`heading_black ${styles.title}`}>CORPORATE EVENTS</h1>
+
+          <p className={`paragraph_medium_black ${styles.lead}`}>
+            From startup to conglomerate, if your people need to blow off
+            steam, celebrate a major win, bond and connect in meaningful
+            ways, improve office culture and morale, or just enjoy each
+            other&apos;s company in a fun and unique way, you&apos;re in the
+            right place!
+          </p>
+
           <p className="paragraph_small_black">
             Survival competition scenario: break into teams after learning some
             survival concepts and then put that new knowledge to the test!
