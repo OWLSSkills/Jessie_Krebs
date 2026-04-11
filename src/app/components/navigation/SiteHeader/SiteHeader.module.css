@@ -47,7 +47,7 @@
   padding: 0 28px;
   border-radius: 18px;
   background: var(--color-brand);
-  overflow-x: auto;
+  overflow-x: hidden;
 }
 
 .navLink {
@@ -55,7 +55,7 @@
   text-decoration: none;
   color: var(--color-text-inverse);
   font-family: var(--font-family-body);
-  font-size: 1rem;
+  font-size: clamp(.8rem, 1.7vw, 1rem);
   font-weight: 500;
 }
 
