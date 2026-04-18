@@ -18,7 +18,7 @@
 .heroGrid {
   flex: 1;
   display: grid;
-  grid-template-columns: minmax(260px, 1fr) minmax(360px, 620px) minmax(260px, 1fr);
+  grid-template-columns: minmax(260px, 1fr) minmax(240px, 440px) minmax(260px, .8fr);
   align-items: end;
   gap: clamp(1rem, 2vw, 2rem);
   min-height: 0;
@@ -26,8 +26,8 @@
 
 .leftColumn {
   display: flex;
-  justify-content: center;
-  align-items: end;
+  /* justify-content:end; */
+  align-items: center;
   min-height: 100%;
   padding-bottom: 16px;
 }
@@ -77,20 +77,25 @@
 
 .imageWrap {
   position: relative;
-  width: min(100%, 620px);
-  height: min(78svh, 860px);
+  width: min(90%, 550px);
+  height: min(70svh, 800px);
   overflow: hidden;
+}
+.headlineLine {
+  white-space: nowrap;
+  scale:.8
 }
 
 .heroImage {
   object-fit: cover;
   object-position: center bottom;
+  
 }
 
 .rightColumn {
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: center;
   min-height: 100%;
     padding-bottom: 8px;
 
@@ -138,87 +143,138 @@
   }
 }
 @media (max-width: 1200px) {
-  .shell {
-    width: min(100% - 32px, 1360px);
-  }
-    .hero {
-    padding-top: clamp(110px, 17vw, 160px);
-  }
-  .hero {
-    min-height: auto;
-  }
-
-  .heroGrid {
+    .heroGrid {
+        margin-top: 20%;
     grid-template-columns: 1fr;
+    justify-items: center;
     align-items: center;
     gap: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-bottom: 1rem;
   }
 
   .leftColumn,
   .imageColumn,
   .rightColumn {
+    width: 100%;
     min-height: auto;
     justify-content: center;
     align-items: center;
+    padding-bottom: 0;
   }
 
   .leftCopyInner,
   .rightCopyCard {
-    max-width: 700px;
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
+    text-align: center;
   }
 
-  .rightCopyCard,
   .rightHeadline,
   .rightCopyCard p {
     text-align: center;
   }
 
   .imageWrap {
-    width: min(100%, 520px);
-    height: min(62svh, 700px);
+    width: min(100%, 460px);
+    height: min(52svh, 560px);
+    margin: 0 auto;
+  }
+
+  .heroImage {
+    object-fit: contain;
+    object-position: center bottom;
   }
 }
-
 @media (max-width: 768px) {
   .shell {
     width: min(100% - 24px, 1360px);
   }
-    .hero {
+
+  .hero {
     padding-top: clamp(88px, 14vw, 120px);
   }
 
   .heroGrid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
     gap: 1.25rem;
     padding-bottom: 1rem;
+  }
+
+  .leftColumn,
+  .imageColumn,
+  .rightColumn {
+    width: 100%;
+    min-height: auto;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0;
+  }
+
+  .leftCopyInner,
+  .rightCopyCard {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    text-align: center;
   }
 
   .leftHeadline {
     font-size: clamp(1.8rem, 8vw, 2.6rem);
     gap: 0.15rem;
+    align-items: center;
+  }
+
+  .headlineLine {
+    white-space: normal;
+    scale: 1;
+    text-align: center;
+  }
+
+  .masterclassRow {
+    justify-content: center;
   }
 
   .masterclassLogo {
     max-width: min(56vw, 220px);
+    margin-inline: auto;
   }
 
   .leftSupporting {
     font-size: clamp(1.05rem, 4.2vw, 1.35rem);
     margin-bottom: 1.25rem;
+    text-align: center;
   }
 
   .imageWrap {
     width: min(100%, 420px);
     height: min(54svh, 520px);
+    margin: 0 auto;
+  }
+
+  .heroImage {
+    object-position: center bottom;
+  }
+
+  .rightCopyCard {
+    text-align: center;
   }
 
   .rightHeadline {
     font-size: clamp(1.7rem, 7vw, 2.3rem);
+    text-align: center;
   }
 
   .rightCopyCard p {
     font-size: 0.98rem;
     line-height: 1.4;
     margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .bannerDock {
+    width: 100%;
   }
 }
