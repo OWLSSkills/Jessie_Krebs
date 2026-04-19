@@ -27,7 +27,7 @@ export function TeamBuildingSection() {
 
         <div className={styles.imageWrap}>
           <Image
-            src="/home/Team_Building_1.jpg"
+            src="/home/NEW_FILE.jpg"
             alt="Team building group outdoors in the snow"
             fill
             className={styles.image}
