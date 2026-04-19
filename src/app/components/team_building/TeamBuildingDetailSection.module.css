@@ -1,54 +1,3 @@
-.section {
-  background: var(--color-bg);
-  padding: clamp(2.5rem, 4vw, 4rem) 0;
-  margin-top: 100px;
-  margin-left: 20px;
-
-}
-.intro{
-    margin-top: 7%;
-}
-.inner {
-  width: min(100% - 48px, 1360px);
-  margin: 0 auto;
-}
-
-.topRow {
-  display: grid;
-  grid-template-columns:1fr 1fr;
-  gap: clamp(2rem, 4vw, 4rem);
-  align-items: start;
-  margin-bottom: 2rem;
-}
-
-
-.heading {
-  margin-bottom: 1.25rem;
-}
-
-.lead {
-  font-weight: 600;
-}
-
-.mosaicWrap {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1 / 0.83;
-  justify-self: end;
-}
-
-.mosaicImage {
-  object-fit: contain;
-  object-position: top center;
-}
-
-.bodyCopy {
-  max-width: 100%;
-}
-
-.bodyCopy p {
-  max-width: none;
-}
 
 .list {
   margin: 0 0 1.75rem 1.4rem;
@@ -63,46 +12,77 @@
   margin-bottom: 0.35rem;
 }
 
-.ctaRow {
-  display: flex;
-  justify-content: center;
-  margin-top: 2.5rem;
+
+
+
+/* ///////////////////////// */
+/* ///////////////////////// */
+
+
+
+.section {
+  background: var(--color-bg);
+  padding: clamp(2.5rem, 4vw, 4rem) 20px;
+  margin-top: 100px;
 }
 
-.cta {
-  min-width: min(100%, 34rem);
+.inner {
+  width: min(100% - 48px, 1360px);
+  margin: 0 auto;
+}
+
+.contentFlow {
+  display: flow-root;
+}
+
+.title {
+  margin: 0 0 1.5rem;
+}
+
+.lead {
+  font-weight: 600;
+  margin: 0 0 1.75rem;
+  max-width: none;
+}
+
+.contentFlow p {
+  max-width: none;
+}
+
+.mosaicWrap {
+  float: right;
+  position: relative;
+  width: min(40vw, 560px);
+  height: 360px; /* reduce until it looks right */
+  margin: 0 0 1.25rem clamp(1.25rem, 3vw, 2.5rem);
+  overflow: hidden;
+}
+
+.mosaicImage {
+  object-fit: contain;
+  object-position: top center;
+}
+
+.ctaRow {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 2rem;
 }
 
 @media (max-width: 980px) {
-  .topRow {
-    grid-template-columns: 1fr;
-  }
-
-  .intro {
-    max-width: none;
-  }
-
-  .lead {
-    max-width: none;
-  }
-
   .mosaicWrap {
-    justify-self: start;
-    max-width: 520px;
+    float: none;
+    width: min(100%, 560px);
+    margin: 0 auto 1.5rem;
   }
 }
 
 @media (max-width: 768px) {
-  .inner {
-    width: min(100% - 24px, 1360px);
-  }
-
   .section {
     padding: 2rem 0;
   }
 
-  .cta {
-    min-width: 0;
-    width: 100%;
+  .inner {
+    width: min(100% - 24px, 1360px);
   }
 }
