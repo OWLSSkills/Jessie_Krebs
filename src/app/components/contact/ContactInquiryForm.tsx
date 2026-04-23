@@ -3,6 +3,8 @@
 import { useMemo, useState, useEffect } from "react";
 import styles from "./ContactInquiryForm.module.css";
 import { SquareButton } from "../interaction/SquareButton";
+import { PrivacyPolicyModal } from "../modals/PrivacyPolicy/PrivacyPolicyModal";
+import { TermsConditionsModal } from "../modals/TermsAndConditions/TermsAndConditionsModal";
 
 type ExperienceFor = "company" | "private-group" | "other" | "";
 
@@ -85,13 +87,14 @@ export function ContactInquiryForm() {
         stateProvince: "",
         country: "",
     });
+    const [isTermsOpen, setIsTermsOpen] = useState(false);
     const [showSuccessModal, setShowSuccessModal] = useState(false);
     const [lastSubmittedMessage, setLastSubmittedMessage] = useState("");
     const [errors, setErrors] = useState<ErrorState>({});
     const [submitted, setSubmitted] = useState(false);
     const [submitStatus, setSubmitStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
     const [submitMessage, setSubmitMessage] = useState("");
-
+    const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
     const followUpLabel = useMemo(() => {
         if (form.experienceFor === "company") {
             return "What is the name of the company or organization?";
@@ -805,8 +808,20 @@ ${organizer} submitted at ${timestamp}.`;
                     />
                     <span>
                         By sending an email to OWLS Skills, I agree to OWLS Skills{" "}
-                        <a href="/terms-and-conditions">Terms &amp; Conditions</a> and{" "}
-                        <a href="/privacy-policy">Privacy Policy</a>.
+                        <button
+                            type="button"
+                            className={styles.privacyButton}
+                            onClick={() => setIsTermsOpen(true)}
+                        >
+                            Terms & Conditions
+                        </button> and{" "}
+                        <button
+                            type="button"
+                            className={styles.privacyButton}
+                            onClick={() => setIsPrivacyOpen(true)}
+                        >
+                            Privacy Policy
+                        </button>
                     </span>
                 </label>
 
@@ -834,6 +849,9 @@ ${organizer} submitted at ${timestamp}.`;
                     All Required fields completed! Feel free to submit!
                 </p>
             ) : null}
+
+
+
             {showSuccessModal ? (
                 <div
                     className={styles.modalOverlay}
@@ -866,6 +884,7 @@ ${organizer} submitted at ${timestamp}.`;
                     </div>
                 </div>
             ) : null}
+
         </form>
 
 

@@ -279,3 +279,18 @@
   display: flex;
   justify-content: center;
 }
+
+.privacyButton {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--color-brand);
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.privacyButton:hover {
+  color: var(--color-brand-hover);
+}
