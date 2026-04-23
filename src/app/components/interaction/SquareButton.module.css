@@ -18,7 +18,7 @@
 .square {
   min-height: 54px;
   padding: 0 20px;
-  background: rgb(27,41,47);
+  background: var(--color-panel);
   color: var(--color-button-text, var(--color-accent));
   font-size: 1rem;
   border-radius: 0;
@@ -27,7 +27,7 @@
 .rounded {
   min-height: 76px;
   padding: 0 30px;
-    background: rgb(27,41,47);
+  background: var(--color-panel);
 
   color: var(--color-accent);
   font-size: clamp(1.2rem, 1.4vw, 1.75rem);
