@@ -74,7 +74,6 @@
   font-size: clamp(1.2rem, 1.5vw, 2rem);
   line-height: 1.2;
 }
-
 .imageColumn {
   display: flex;
   justify-content: center;
@@ -84,15 +83,15 @@
 
 .imageWrap {
   position: relative;
-  width: min(90%, 550px);
+  width: min(100%, 550px);
   height: min(70svh, 800px);
-  overflow: hidden;
+  overflow: visible;
 }
 
 .heroImage {
+  object-fit: contain;
   object-position: center bottom;
 }
-
 .rightColumn {
   display: flex;
   justify-content: center;
