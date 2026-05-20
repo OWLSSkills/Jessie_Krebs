@@ -163,63 +163,6 @@
   }
 }
 
-/* Medium screens / small laptops / tablet landscape */
-@media (max-width: 1180px) and (min-width: 901px) {
-  .shell {
-    width: min(100% - 32px, 1180px);
-    padding-top: 18px;
-  }
-
-  .heroGrid {
-    grid-template-columns:
-      minmax(200px, 0.85fr)
-      minmax(220px, 360px)
-      minmax(220px, 0.85fr);
-    gap: 0.5rem;
-  }
-
-  .leftCopyInner {
-    max-width: 340px;
-  }
-
-  .leftHeadline {
-    font-size: clamp(1.55rem, 2vw, 2.1rem);
-    line-height: 0.95;
-    margin-bottom: 0.75rem;
-  }
-
-  .headlineLine {
-    scale: 0.9;
-  }
-
-  .masterclassLogo {
-    max-width: 170px;
-  }
-
-  .leftSupporting {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-  }
-
-  .imageWrap {
-    width: min(100%, 380px);
-    height: min(60svh, 620px);
-  }
-
-  .rightCopyCard {
-    max-width: 330px;
-  }
-
-  .rightHeadline {
-    font-size: clamp(1.6rem, 2vw, 2.2rem);
-  }
-
-  .rightCopyCard p {
-    font-size: 0.9rem;
-    line-height: 1.35;
-    margin-bottom: 0.9rem;
-  }
-}
 
 /* Stack layout */
 @media (max-width: 900px) {
@@ -392,5 +335,87 @@
   .rightCopyCard p {
     font-size: 0.93rem;
     line-height: 1.38;
+  }
+}
+/* Medium screens / small laptops / tablet landscape
+   Keep 3 columns, but shrink and gently push side copy down */
+@media (max-width: 1180px) and (min-width: 901px) {
+  .hero {
+    min-height: 100svh;
+
+    /* as the screen gets tighter, move the side text down */
+    --side-copy-offset-y: clamp(1.5rem, 5vw, 4rem);
+  }
+
+  .shell {
+    width: min(100% - 32px, 1180px);
+    padding-top: clamp(6.5rem, 11vw, 10rem);
+  }
+
+  .heroGrid {
+    grid-template-columns:
+      minmax(180px, 0.9fr)
+      minmax(220px, 340px)
+      minmax(190px, 0.85fr);
+    align-items: center;
+    gap: clamp(0.5rem, 1.2vw, 1rem);
+    padding-bottom: 1rem;
+  }
+
+  .leftColumn,
+  .rightColumn {
+    min-height: auto;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 0;
+  }
+
+  .imageColumn {
+    min-height: auto;
+    align-items: end;
+    justify-content: center;
+  }
+
+  .leftCopyInner {
+    max-width: 310px;
+  }
+
+  .leftHeadline {
+    font-size: clamp(1.35rem, 2vw, 1.95rem);
+    line-height: 0.95;
+    margin-bottom: 0.65rem;
+  }
+
+  .headlineLine {
+    scale: 0.95;
+  }
+
+  .masterclassLogo {
+    max-width: 160px;
+  }
+
+  .leftSupporting {
+    font-size: 1rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .imageWrap {
+    width: min(100%, 340px);
+    height: min(56svh, 560px);
+  }
+
+  .rightCopyCard {
+    max-width: 300px;
+  }
+
+  .rightHeadline {
+    font-size: clamp(1.35rem, 2vw, 1.95rem);
+    line-height: 0.95;
+  }
+
+  .rightCopyCard p {
+    font-size: 0.86rem;
+    line-height: 1.32;
+    margin-bottom: 0.75rem;
   }
 }
