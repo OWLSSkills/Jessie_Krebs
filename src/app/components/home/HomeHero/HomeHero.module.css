@@ -419,3 +419,102 @@
     margin-bottom: 0.75rem;
   }
 }
+
+/* Short desktop / laptop screens:
+   Keep the 3-column layout, but compress the hero vertically */
+@media (max-height: 760px) and (min-width: 901px) {
+  .hero {
+    min-height: 100svh;
+  }
+
+  .shell {
+    padding-top: clamp(5.5rem, 13vh, 8rem);
+    width: min(100% - 40px, 1360px);
+  }
+
+  .heroGrid {
+    align-items: end;
+    gap: clamp(0.5rem, 1.2vw, 1.25rem);
+  }
+
+  .leftCopyInner {
+    max-width: 360px;
+  }
+
+  .leftHeadline {
+    font-size: clamp(1.35rem, 2vw, 2.05rem);
+    line-height: 0.92;
+    margin-bottom: 0.55rem;
+  }
+
+  .headlineLine {
+    scale: 0.9;
+  }
+
+  .masterclassLogo {
+    max-width: clamp(140px, 13vw, 180px);
+  }
+
+  .leftSupporting {
+    font-size: clamp(0.95rem, 1.4vw, 1.25rem);
+    margin-bottom: 0.85rem;
+  }
+
+  .imageWrap {
+    width: min(100%, 380px);
+    height: min(52svh, 440px);
+  }
+
+  .rightCopyCard {
+    max-width: 360px;
+  }
+
+  .rightHeadline {
+    font-size: clamp(1.35rem, 2vw, 2rem);
+    line-height: 0.92;
+    margin-bottom: 0.5rem;
+  }
+
+  .rightCopyCard p {
+    font-size: clamp(0.8rem, 1.15vw, 0.9rem);
+    line-height: 1.28;
+    margin-bottom: 0.65rem;
+  }
+
+  .bannerDock {
+    flex-shrink: 0;
+  }
+}
+
+
+/* Very short laptop/devtools screens */
+@media (max-height: 640px) and (min-width: 901px) {
+  .shell {
+    padding-top: clamp(4.75rem, 12vh, 6.5rem);
+  }
+
+  .leftHeadline,
+  .rightHeadline {
+    font-size: clamp(1.2rem, 1.75vw, 1.65rem);
+  }
+
+  .leftSupporting {
+    font-size: 0.95rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .rightCopyCard p {
+    font-size: 0.78rem;
+    line-height: 1.22;
+    margin-bottom: 0.5rem;
+  }
+
+  .imageWrap {
+    width: min(100%, 340px);
+    height: min(48svh, 380px);
+  }
+
+  .masterclassLogo {
+    max-width: 145px;
+  }
+}
