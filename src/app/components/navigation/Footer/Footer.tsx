@@ -20,7 +20,7 @@ export default function Footer() {
       </div>
 
       <div className={styles.footerStack}>
-        <a href='https://website-linking-page.vercel.app/' style={{cursor: 'pointer'}}>
+        <a href='https://jessiekrebs.com' style={{cursor: 'pointer'}}>
         <img
           src="/images/Jessie_Krebs_Color.png"
           alt="Jessie Krebs Logo"
