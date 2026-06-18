@@ -5,7 +5,7 @@ import { SquareButton } from "../../interaction/SquareButton";
 const curiousItems = [
   {
     title: "GENERAL PACKING LISTS",
-    href: "https://website-linking-page.vercel.app/packing_list",
+    href: "https://jessiekrebs.com/packing_list",
     imageSrc: "/home/tarpa.png",
     imageAlt: "General packing lists preview",
   },
@@ -17,7 +17,7 @@ const curiousItems = [
   },
   {
     title: "SURVIVAL SKILLS ONLINE LEARNING BY JESSIE KREBS",
-    href: "https://website-linking-page.vercel.app/online_learning",
+    href: "https://jessiekrebs.com/online_learning",
     imageSrc: "/home/Jessie_knots.png",
     imageAlt: "Survival skills online learning preview",
   },
