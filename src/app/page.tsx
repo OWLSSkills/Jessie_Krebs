@@ -6,6 +6,7 @@ import { KeynoteSpeakerSection } from "./components/home/KeyNoteSpeakerSection/K
 import { CorporateEventsSection } from "./components/home/CorporateEventsSection/CorporateEventsSection";
 import { SmallGroupEventsSection } from "./components/home/SmallGroupEventsSection/SmallGroupEventsSection";
 import { TeamBuildingSection } from "./components/home/TeamBuildingSection/TeamBuildingSection";
+import { CuriousSection } from "./components/home/CuriousSection/CuriousSection";
 
 export default function HomePage() {
   return (
@@ -16,6 +17,7 @@ export default function HomePage() {
       <CorporateEventsSection />
       <SmallGroupEventsSection />
       <TeamBuildingSection />
+      <CuriousSection />
     </main>
   );
 }

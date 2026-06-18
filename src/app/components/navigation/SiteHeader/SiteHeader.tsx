@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "./SiteHeader.module.css";
+import CustomCoursesLogo from "../../customCourseLogo/CustomCoursesLogo";
 
 const navItems = [
   { label: "About Jessie", href: { pathname: "/", hash: "about-jessie" } },
@@ -38,10 +39,7 @@ export function SiteHeader() {
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
-        <Link href="/" className={styles.brandBlock} onClick={closeMobileMenu}>
-          <span className={styles.brandTitle}>CUSTOM COURSES</span>
-          <span className={`gloria`}>by Jessie Krebs</span>
-        </Link>
+        <CustomCoursesLogo />
 
         <nav className={styles.desktopNav} aria-label="Primary">
           {navItems.map((item) => (
