@@ -5,6 +5,7 @@ import styles from "./ContactInquiryForm.module.css";
 import { SquareButton } from "../interaction/SquareButton";
 import { PrivacyPolicyModal } from "../modals/PrivacyPolicy/PrivacyPolicyModal";
 import { TermsConditionsModal } from "../modals/TermsAndConditions/TermsAndConditionsModal";
+import { Turnstile } from "@marsidev/react-turnstile";
 
 type ExperienceFor = "company" | "private-group" | "other" | "";
 
@@ -95,6 +96,8 @@ export function ContactInquiryForm() {
     const [submitStatus, setSubmitStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
     const [submitMessage, setSubmitMessage] = useState("");
     const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
+    const [turnstileToken, setTurnstileToken] = useState("");
+    const [website, setWebsite] = useState("");
     const followUpLabel = useMemo(() => {
         if (form.experienceFor === "company") {
             return "What is the name of the company or organization?";
@@ -239,7 +242,10 @@ export function ContactInquiryForm() {
         if (!form.agreedToTerms) {
             nextErrors.agreedToTerms = "You must agree before submitting.";
         }
-
+        if (!turnstileToken) {
+            nextErrors.turnstileToken =
+                "Please complete the anti-bot verification.";
+        }
         return nextErrors;
     }
 
@@ -361,6 +367,8 @@ ${organizer} submitted at ${timestamp}.`;
             return;
         }
 
+
+
         const message = buildSubmissionMessage();
 
         try {
@@ -375,8 +383,14 @@ ${organizer} submitted at ${timestamp}.`;
                     subject: "NEW CUSTOM COURSE REQUEST!!!",
                     message,
                     formData: form,
+                    turnstileToken,
+                    website,
+
+
                 }),
             });
+
+
 
             const data = await response.json();
 
@@ -384,11 +398,12 @@ ${organizer} submitted at ${timestamp}.`;
                 throw new Error(data?.message || "Unable to send request.");
             }
 
-            console.log("Human-readable submission:\n", message);
+
             setSubmitStatus("success");
             setSubmitMessage("Your request was sent successfully.");
             setLastSubmittedMessage(message);
             setShowSuccessModal(true);
+            setTurnstileToken("");
         } catch (error) {
             console.error(error);
             setSubmitStatus("error");
@@ -778,6 +793,21 @@ ${organizer} submitted at ${timestamp}.`;
                     )}
                 </div>
             </section>
+            <div className={styles.honeypot} aria-hidden="true">
+                <label htmlFor="website">
+                    Website
+                </label>
+
+                <input
+                    id="website"
+                    name="website"
+                    type="text"
+                    value={website}
+                    onChange={(event) => setWebsite(event.target.value)}
+                    tabIndex={-1}
+                    autoComplete="off"
+                />
+            </div>
 
             <section className={styles.sectionBlock}>
                 <h2 className={styles.sectionTitle}>7. Objectives &amp; Outcomes</h2>
@@ -828,6 +858,39 @@ ${organizer} submitted at ${timestamp}.`;
                 {errors.agreedToTerms && (
                     <p className={styles.errorText}>{errors.agreedToTerms}</p>
                 )}
+            </section>
+            <section className={styles.sectionBlock}>
+                <Turnstile
+                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                    onSuccess={(token) => {
+                        setTurnstileToken(token);
+
+                        setErrors((previous) => {
+                            const next = { ...previous };
+                            delete next.turnstileToken;
+                            return next;
+                        });
+                    }}
+                    onExpire={() => {
+                        setTurnstileToken("");
+                    }}
+                    onError={() => {
+                        setTurnstileToken("");
+                        setSubmitMessage(
+                            "The anti-bot verification could not load. Please refresh and try again."
+                        );
+                    }}
+                    options={{
+                        theme: "auto",
+                        size: "normal",
+                    }}
+                />
+
+                {errors.turnstileToken ? (
+                    <p className={styles.errorText}>
+                        {errors.turnstileToken}
+                    </p>
+                ) : null}
             </section>
 
             <div className={styles.submitRow}>
